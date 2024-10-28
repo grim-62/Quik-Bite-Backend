@@ -9,7 +9,7 @@ exports.signUp = asyncErrorHandler(async (req, res, next) => {
   sendtoken(user, 201, res);
   res.status(201).json(user);
 });
-exports.login = asyncErrorHandler(async (req, res, next) => {
+exports.signIn = asyncErrorHandler(async (req, res, next) => {
   const user = await usermodel
     .findOne({ email: req.body.email })
     .select("+password");
@@ -22,12 +22,13 @@ exports.login = asyncErrorHandler(async (req, res, next) => {
   sendtoken(user,200,res);
 });
 
-exports.signout = asyncErrorHandler(async (req, res, next) => {
-    res.clearCookie('token')
-    res.json({success:"successfully signout!"})
+exports.signOut = asyncErrorHandler(async (req, res, next) => {
+  res.clearCookie('token');
+  res.json({message : " sign-out successfully"});
+
 });
 
-exports.Forgotpassword = asyncErrorHandler(async(req, res, next) => {
+exports.forgotPassword = asyncErrorHandler(async(req, res, next) => {
   res.send("updateProfile");
 });
 exports.resetPassword = asyncErrorHandler(async(req, res, next) => {
