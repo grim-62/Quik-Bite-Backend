@@ -10,7 +10,7 @@ exports.isAuthanticated = asyncErrorHandler(async(req,res,next)=>{
       return next(new ErrorHandler("Login first to access this resource", 401));
     }
     const { id } = jwt.verify(token, process.env.JWT_SECRET);
-    
+    req.id = id;
     next(); 
 
 })
