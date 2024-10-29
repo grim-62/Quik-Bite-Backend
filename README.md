@@ -50,6 +50,7 @@ PRIVATE_KEY_IMAGEKIT = your_private_key-imagekit
 
 ENDPOINT_URL_IMAGEKIT = your_endpoint_url-imagekit
 ```
+if any problem there is a `.env.sample`file in the root directory and you can replicate it .
 
 ### Start the Server
 ```bash
