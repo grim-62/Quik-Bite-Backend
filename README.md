@@ -19,12 +19,11 @@ Quik-Bite is a food delivery API that provides access to a range of restaurants,
 ### Prerequisites
 - Node.js (v14 or higher)
 - MongoDB (local or cloud instance)
-- Access to BunnyCDN for file storage
+- Access to Imagekit api
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/sumitxae/HR-Mangement.git
-cd HR-Management
+git clone https://github.com/grim-62/Quik-Bite-Backend.git
 ```
 
 ### Install Dependencies
