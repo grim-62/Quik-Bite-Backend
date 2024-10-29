@@ -1,5 +1,3 @@
-Sure! Below is a sample documentation for your HR Management System project. This includes a project overview, installation instructions, usage details, and API documentation.
-
 # Quik-Bite Documentation
 
 ## Project Overview
