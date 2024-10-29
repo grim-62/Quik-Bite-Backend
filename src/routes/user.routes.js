@@ -4,16 +4,19 @@ const {
   userProfile,
   updateProfile,
   deleteAcount,
+  updateAvatar,
 } = require('../controllers/users.Controllers')
 
 const { isAuthanticated } = require('../middleware/authMiddleware')
 
 const router = express.Router()
 
-router.get('/profile',isAuthanticated, userProfile)
+router.get('/profile',isAuthanticated, userProfile);
 
-router.put('/user-update', updateProfile)
+router.post('/user-update',isAuthanticated, updateProfile);
 
-router.delete('/delete-user', deleteAcount)
+router.post('/user-avatar',isAuthanticated, updateAvatar);
+
+router.delete('/delete-user', deleteAcount);
 
 module.exports = router

@@ -3,6 +3,8 @@ const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
+const fileUpload = require('express-fileupload')
+
 const ErrorHandler = require("./utils/ErrorHandler");
 const { generatedErrors } = require("./middleware/errors");
 
@@ -14,6 +16,7 @@ require("./configs/envConfig").envConfig()
 
 const app = express();
 
+app.use(fileUpload()) 
 app.use(cors({ origin: true, credentials: true }));
 app.use(morgan('dev'));
 app.use(cookieParser());
