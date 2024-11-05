@@ -24,6 +24,7 @@ const userSchema = new mongoose.Schema(
     },
     password: { 
       type: String, 
+      select:false,
       required: [true, 'Password is required'],
       minlength: [6, 'Password must be at least 6 characters'],
     },
@@ -92,15 +93,23 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) return next()
-  const salt = await bcrypt.genSalt(10)
-  this.password = await bcrypt.hash(this.password, salt)
-  next()
-})
+  if (!this.isModified('password')) return ;
+  try {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+  } catch (error) {
+    next(error); 
+  }
+});
 
-userSchema.methods.comparePassword = async function (inputPassword) {
-  return bcrypt.compare(inputPassword, this.password)
-}
+userSchema.methods.comparepassword = function (password) {
+  
+  return bcrypt.compareSync(password, this.password); // Now, `this.password` should be accessible
+
+};
+
+
 userSchema.methods.getjwttoken = function(){
   return jwt.sign(
       { id:this.id },

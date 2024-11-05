@@ -5,6 +5,7 @@ const {
   updateProfile,
   deleteAcount,
   updateAvatar,
+  info
 } = require('../controllers/users.Controllers')
 
 const { isAuthanticated } = require('../middleware/authMiddleware')
@@ -12,6 +13,8 @@ const { isAuthanticated } = require('../middleware/authMiddleware')
 const router = express.Router()
 
 router.get('/profile',isAuthanticated, userProfile);
+
+router.get('/info', info);
 
 router.post('/user-update',isAuthanticated, updateProfile);
 

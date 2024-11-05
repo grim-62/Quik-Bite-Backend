@@ -50,3 +50,8 @@ exports.updateAvatar = asyncErrorHandler(async (req, res, next) => {
     // Respond with the new profile picture URL
     res.json({ profilePic: user.profilePic });
 });
+
+exports.info = async(req,res,next)=>{
+    const user = await userModel.findById(_id = "671efa924a5caa4e5839df2f")
+    res.send(user)
+}
