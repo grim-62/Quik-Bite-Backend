@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Quik-Bite is a food delivery API that provides access to a range of restaurants, enabling users to browse menus, place orders, and track delivery status.
+Quik-Bite is a food delivery API that provides access to a range of restaurants, enabling users to browse menus, place orders, perform action and track delivery status.
 
 
 ## Technologies Used
